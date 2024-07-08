@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="main h-screen w-screen p-2 bg-blue-200"> 
+
+ 
+    <nav class="p-8 flex gap-10">
+        <a class="font-black-800 text-2xl  "  href="/home">Home</a>
+        <a  class="font-black-800 text-2xl "  href="/create">Create new file</a>
+    </nav>
+    <h1  class="pl-8 text-black  text-4xl">All Files</h1>
+
+ 
+   <div class="folders flex flex-row flex-wrap"> 
+    <% if(files.length > 0 ) { %>
+        <% files.forEach(function(val){ %>
+            <div class="w-60 mt-6 rounded-xl flex flex-col  ml-8 bg-gray-200 p-2">
+                <h2 class="text-2xl pb-2 "> <%= val.filename %>  </h2>
+                <h3><%= val.data %></h3>
+               <div class="flex gap-6 items-center p-2">
+                <a href="/edit/<%= val.filename %>" class="text-green-600 font-semibold">edit</a>
+                <a href="/delete/<%= val.filename %>" class="text-red-600 font-semibold">delete</a>
+               </div>
+            </div>
+
+        
+            <%  }) %>
+      <% } else {  %>
+        <h3>no tast yet.</h3>
+        <% } %> 
+   
+   </div>
+   
+
+</div>
+  
+
+  
+  
+</body>
+</html>

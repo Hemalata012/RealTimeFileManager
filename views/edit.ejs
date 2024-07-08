@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="main h-screen w-screen bg-blue-200 p-2"> 
+
+   
+    <nav class="p-8 flex gap-10">
+        <a class="font-black-800 text-2xl  "  href="/home">Home</a>
+        <a  class="font-black-800 text-2xl "  href="/create">Update file</a>
+    </nav>
+    <h1 class="pl-8 text-black  font-bold text-xl">Update your File Here</h1>
+    <form  class="flex flex-col p-6 w-60 bg-gray-200 ml-8 mt-8" action="/update/<%= filename %>" method="post">
+    <input class="mb-8 border-2 p-2 border-black  " type="text"  placeholder="filename"  value=" <%= filename %>">
+    <textarea class="resize-none border-2 p-2 border-black mb-8  "   placeholder=" filedata" name="filedata"><%= filedata %></textarea>
+    <input class="bg-yellow-500   w-20 p-2 text-white rounded-xl "  type="submit" value="update">
+    </form> 
+</div>
+</body>
+</html>
